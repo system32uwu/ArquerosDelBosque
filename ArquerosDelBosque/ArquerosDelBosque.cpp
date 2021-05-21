@@ -57,7 +57,6 @@ int main()
 				disparoNoTuvoEfecto = true;
 				break;
 			case 1: //can move
-				currentPlayer.move(direction);
 				grid.Arqueros[turn].move(direction);
 				break;
 			case 2: //hits enemy
