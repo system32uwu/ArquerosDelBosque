@@ -9,7 +9,7 @@ int main()
 { 
 	srand(time(0));
 
-	Arquero A(4, 9, "A");
+	Arquero A(9, 0, "A");
 	Arquero B(0, 9, "B");
 
 	while (true) {
