@@ -143,12 +143,12 @@
     <ClCompile Include="ArquerosDelBosque.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arquero.h" />
     <ClInclude Include="CONSTANTS.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="Enums.h" />
     <ClInclude Include="Grid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

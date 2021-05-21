@@ -14,9 +14,10 @@ inline void Grid::FillTrees() {
 	for (int i = 0; i < NUMBER_OF_TREES; i++) {
 		bool taken = true;
 		srand(time(0));
-		while (taken) {
+		while (taken) { //keep generating a random position until it finds one that's not already used
 			Entity arbol(rand() % 8 + 1, rand() % 8 + 1, "0");
 
+			//lambda expresion, can be replaced with a for loop checking the same condition
 			if (std::find_if(Arboles.begin(), Arboles.end(), [arbol](const Entity& a) {return a.X == arbol.X && a.Y == arbol.Y; }) == Arboles.end()) {
 				Arboles.push_back(arbol);
 				taken = false;
@@ -26,6 +27,8 @@ inline void Grid::FillTrees() {
 }
 
 inline void Grid::DrawGrid() {
+	printf("\033c"); //reset console window (*nix, Windows 10 >= TH2 )
+
 	for (int x = 0; x < Size; x++)
 	{
 		std::string row = "";
@@ -66,4 +69,5 @@ inline void Grid::DrawGrid() {
 		std::cout << std::endl;
 		std::cout << row + "|";
 	}
+	std::cout << std::endl << "\n";
 }
