@@ -5,10 +5,12 @@
 
 #Instructions
 
-M = Move
-T = Shoot
+##Actions
+- M = Move
+- T = Shoot
 
-S = South
-N = North
-E = East
-O = Weast
+##Directions
+- S = South
+- N = North
+- E = East
+- O = West
