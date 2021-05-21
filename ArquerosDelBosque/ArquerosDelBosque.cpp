@@ -9,7 +9,7 @@ int main()
 { 
 	srand(time(0));
 
-	Arquero A(0, 7, "A");
+	Arquero A(9, 0, "A");
 	Arquero B(0, 9, "B");
 
 	int turn = rand() % 2;
