@@ -37,7 +37,7 @@ inline char AskInputAndValidate(std::vector<char> possibleLetters, std::string m
 //0: hits tree (shooting | moving ), 1: can walk to direction, 2: hits player (shooting), -1: didn't hit anything (shooting).
 inline int act(char direction, std::vector<Entity> arboles, Arquero currentPlayer, Arquero currentEnemy, char action) {
 
-	int shooting = false;
+	bool shooting = false;
 
 	if (action == 'T') {
 		shooting = true;
@@ -59,19 +59,19 @@ inline int act(char direction, std::vector<Entity> arboles, Arquero currentPlaye
 		else {
 			for (Entity tree : arboles) {
 				if (currentPlayer.Y == tree.Y && tree.X == currentPlayer.X + 1) {
-					return 0;
+					return 0; //hits tree
 				}
 			}
 		}
 	}else if (direction == 'N') {
 		if (shooting) {
-			for (int i = currentPlayer.X + SHOOT_RANGE; i > currentPlayer.X; i--) {
+			for (int i = currentPlayer.X ; i > currentPlayer.X - SHOOT_RANGE; i--) {
 				for (Entity tree : arboles) {
 					if (currentPlayer.Y == tree.Y && tree.X == i) {
-						return 0; //tree in front
+						return 0; 
 					}
 					else if (currentEnemy.Y == currentPlayer.Y && currentEnemy.X == i) {
-						return 2; //hits enemy
+						return 2; 
 					}
 				}	
 			}
@@ -106,7 +106,7 @@ inline int act(char direction, std::vector<Entity> arboles, Arquero currentPlaye
 	}
 	else if (direction == 'O') {
 		if (shooting) {
-			for (int i = currentPlayer.Y + SHOOT_RANGE; i > currentPlayer.Y; i--) {
+			for (int i = currentPlayer.Y; i > currentPlayer.Y - SHOOT_RANGE; i--) {
 				for (Entity tree : arboles) {
 					if (currentPlayer.X == tree.X && tree.Y == i) {
 						return 0;

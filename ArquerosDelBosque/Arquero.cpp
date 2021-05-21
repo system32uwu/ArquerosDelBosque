@@ -1,6 +1,5 @@
 #pragma once
 #include "Arquero.h"
-#include "CONSTANTS.h"
 
 inline void Arquero::move(char direction) {
 	switch (direction)
