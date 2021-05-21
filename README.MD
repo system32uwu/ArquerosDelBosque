@@ -3,13 +3,13 @@
 
 <img src="https://raw.githubusercontent.com/system32uwu/ArquerosDelBosque/master/screenshot.png" width=300 />
 
-#Instructions
+# Instructions
 
-##Actions
+## Actions
 - M = Move
 - T = Shoot
 
-##Directions
+## Directions
 - S = South
 - N = North
 - E = East
